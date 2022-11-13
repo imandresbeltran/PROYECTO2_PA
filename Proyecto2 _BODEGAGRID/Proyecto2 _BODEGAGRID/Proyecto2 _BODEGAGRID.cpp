@@ -8,7 +8,7 @@ using namespace System;
 int main(array<System::String ^> ^args)
 {
 	//DECLARAMOS VARIABLES GLOBALES
-	int opcion, columna;
+	int opcion, columna, respuesta;
 	char row;
 	String^ fila;
 	String^ tipo_producto;
@@ -64,6 +64,26 @@ int main(array<System::String ^> ^args)
 				}
 				else goto llenarbahia;
 				
+			llenadoinformacion:
+				do {
+					Console::WriteLine("¿Desea guardar la informacion en un archivo de texto? (S/N)");
+					Console::WriteLine("1. Guardar");
+					Console::WriteLine("2. Regresar");
+					respuesta = int::Parse(Console::ReadLine());
+
+					switch (respuesta)
+					{
+					case 1:
+
+						break;
+
+					case 2:
+						goto llenarbahia;
+					default:
+						break;
+					}
+				} while (respuesta != 2);
+
 				break;
 
 
